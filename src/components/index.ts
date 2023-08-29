@@ -1,10 +1,10 @@
 // export { default as Sidebar } from "./Sidebar";
 export { default as Button } from "./Button/Button";
 export { default as Block } from "./Block/Block";
-// export { default as Message } from "./Message";
+export { default as Message } from "./Message/Message";
 // export { default as Messages } from "./Messages";
 // export { default as DialogItem } from "./DialogItem";
-// export { default as Time } from "./Time";
+export { default as Time } from "./Time/Time";
 // export { default as IconReaded } from "./IconReaded";
 // export { default as Dialogs } from "./Dialogs";
 // export { default as Avatar } from "./Avatar";

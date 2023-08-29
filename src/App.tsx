@@ -1,11 +1,14 @@
-// import { Button, Block } from "./components";
-import AuthPage from "./pages/Auth/AuthPage";
+import { Route, Routes } from "react-router-dom";
+import AuthPage from "./pages/AuthPage/AuthPage";
+import ChatPage from "./pages/ChatPage/ChatPage";
 
 function App() {
   return (
-    <>
-      <AuthPage />
-    </>
+    <Routes>
+      <Route index path="/" element={<AuthPage />} />
+      <Route path="signup" element={<AuthPage />} />
+      <Route path="chat" element={<ChatPage />} />
+    </Routes>
   );
 }
 
