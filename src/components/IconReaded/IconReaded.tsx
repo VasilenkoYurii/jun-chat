@@ -3,7 +3,7 @@ import noReadedSvg from "@/assets/img/noreaded.svg";
 
 interface IconReadedProps {
   isMe?: boolean;
-  isReaded: boolean;
+  isReaded?: boolean;
 }
 
 const IconReaded = ({ isMe, isReaded }: IconReadedProps) =>

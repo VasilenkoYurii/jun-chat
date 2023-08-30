@@ -36,6 +36,9 @@ export default ({ isAuth, values, errors }: ValidateProps) => {
       }
     },
     password_2: (value) => {
+      if (!isAuth && value === "") {
+        errors.password_2 = "Введите пароль";
+      }
       if (!isAuth && value !== values.password) {
         errors.password_2 = "Пароли не совпадают";
       }

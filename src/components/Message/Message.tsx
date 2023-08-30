@@ -5,12 +5,13 @@ import "./Message.scss";
 
 interface MessageProps {
   avatar: string;
-  text: string;
+  text?: string;
   date?: string;
   userName: string;
   isMe?: boolean;
-  isReaded: boolean;
+  isReaded?: boolean;
   attachments?: object[];
+  isTyping?: boolean;
 }
 
 const Message = ({
@@ -21,6 +22,7 @@ const Message = ({
   isMe,
   isReaded,
   attachments,
+  isTyping,
 }: MessageProps) => {
   // const renderAttachment = (item: any) => {
   //   if (item.ext !== "webm") {
@@ -41,7 +43,13 @@ const Message = ({
   // };
 
   return (
-    <div className={classNames("message", { "message--isme": isMe })}>
+    <div
+      className={classNames("message", {
+        "message--isme": isMe,
+        "message--is-typing": isTyping,
+        "message--image": attachments && attachments.length === 1 && !text,
+      })}
+    >
       <div className="message__content">
         <IconReaded isMe={isMe} isReaded={isReaded} />
         <div className="message__avatar">
@@ -49,16 +57,29 @@ const Message = ({
         </div>
 
         <div className="message__info">
-          <div className="message__bubble">
-            <p className="message__text">{text}</p>
-          </div>
+          {(text || isTyping) && (
+            <div className="message__bubble">
+              {text && <p className="message__text">{text}</p>}
+              {isTyping && (
+                <div className="message__typing">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* <div className="message__bubble">
+            {text && <p className="message__text">{text}</p>}
+          </div> */}
 
           {attachments && (
             <div className="message__attachments">
               {/* {attachments.map((item) => renderAttachment(item))} */}
-              {attachments.map((item: any) => {
+              {attachments.map((item: any, index) => {
                 return (
-                  <div className="message__attachments-item">
+                  <div className="message__attachments-item" key={index}>
                     <img src={item.url} alt={item.filename} />
                   </div>
                 );

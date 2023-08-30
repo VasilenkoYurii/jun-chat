@@ -40,6 +40,21 @@ const ChatPage = () => {
           },
         ]}
       />
+      <Message
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
+        userName="Sergii"
+        attachments={[
+          {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU",
+            filename: "avatar",
+          },
+        ]}
+      />
+      <Message
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
+        userName="Sergii"
+        isTyping={true}
+      />
     </section>
   );
 };
