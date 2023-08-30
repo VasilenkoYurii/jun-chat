@@ -10,7 +10,21 @@ const ChatPage = () => {
         text="Привет бандит, как дела?"
         date="Sun Apr 21 2023 21:30:22"
         userName="Yurii"
-        isMe={false}
+        isReaded={true}
+        attachments={[
+          {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU",
+            filename: "avatar",
+          },
+          {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU",
+            filename: "avatar",
+          },
+          {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU",
+            filename: "avatar",
+          },
+        ]}
       />
       <Message
         avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
@@ -18,6 +32,13 @@ const ChatPage = () => {
         date="Sun Apr 21 2023 21:38:22"
         userName="Sergii"
         isMe={true}
+        isReaded={true}
+        attachments={[
+          {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU",
+            filename: "avatar",
+          },
+        ]}
       />
     </section>
   );
