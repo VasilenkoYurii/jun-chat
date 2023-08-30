@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 
-import LoginForm from "../../modules/LoginForm/components/LoginForm";
-import RegisterForm from "../../modules/RegisterForm/components/RegisterForm";
+import LoginForm from "@/modules/LoginForm";
+import RegisterForm from "@/modules/RegisterForm";
 
 import "./AuthPage.scss";
 

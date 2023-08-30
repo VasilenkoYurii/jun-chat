@@ -1,10 +1,40 @@
 import { Form, Input } from "antd";
-import { MailOutlined, LockOutlined } from "@ant-design/icons";
+import {
+  MailOutlined,
+  LockOutlined,
+  EyeTwoTone,
+  EyeInvisibleOutlined,
+} from "@ant-design/icons";
 import { Link } from "react-router-dom";
-
+import validateField from "@/utils/helpers/validateField";
 import { Button, Block } from "../../../components";
 
-const LoginForm = () => {
+interface LoginFormProps {
+  values: {
+    email: string;
+    password: string;
+  };
+  touched: any;
+  errors: any;
+  handleChange: any;
+  handleBlur: any;
+  handleSubmit: any;
+  isValid: any;
+  isSubmitting: any;
+}
+
+const LoginForm = (props: LoginFormProps) => {
+  const {
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isValid,
+    isSubmitting,
+  } = props;
+
   return (
     <div>
       <div className="auth__top">
@@ -12,13 +42,10 @@ const LoginForm = () => {
         <p>Пожалуйста, войдите в свой аккаунт</p>
       </div>
       <Block>
-        <Form
-          // onFinish={handleSubmit}
-          className="login-form"
-        >
+        <Form onFinish={handleSubmit} className="login-form">
           <Form.Item
-            // validateStatus={validateField("email", touched, errors)}
-            // help={!touched.email ? "" : errors.email}
+            validateStatus={validateField("email", touched, errors)}
+            help={!touched.email ? "" : errors.email}
             hasFeedback
           >
             <Input
@@ -26,32 +53,35 @@ const LoginForm = () => {
               prefix={<MailOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               size="large"
               placeholder="E-Mail"
-              // value={values.email}
-              // onChange={handleChange}
-              // onBlur={handleBlur}
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Form.Item>
           <Form.Item
-            // validateStatus={validateField("password", touched, errors)}
-            // help={!touched.password ? "" : errors.password}
+            validateStatus={validateField("password", touched, errors)}
+            help={!touched.password ? "" : errors.password}
             hasFeedback
           >
-            <Input
+            <Input.Password
               id="password"
               prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               size="large"
               type="password"
               placeholder="Пароль"
-              // value={values.password}
-              // onChange={handleChange}
-              // onBlur={handleBlur}
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              iconRender={(visible) =>
+                visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+              }
             />
           </Form.Item>
           <Form.Item>
-            {/* {isSubmitting && !isValid && <span>Ошибка!</span>} */}
+            {isSubmitting && !isValid && <span>Ошибка!</span>}
             <Button
-              // disabled={isSubmitting}
-              // onClick={handleSubmit}
+              disabled={isSubmitting}
+              onClick={handleSubmit}
               type="primary"
               size="large"
             >
