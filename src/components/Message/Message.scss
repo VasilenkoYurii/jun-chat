@@ -125,7 +125,7 @@
     #{$self}__audio {
       padding: 15px;
       background-color: #3674ff;
-      border-radius: 12px 12px 0px 12px;
+      border-radius: 12px 12px 12px 0px;
       width: 250px;
       overflow: hidden;
       position: relative;
@@ -144,6 +144,8 @@
           height: 28px;
           border-radius: 30px;
           background: #0f3997;
+          align-items: center;
+          justify-content: center;
           img {
             height: 13px;
             position: relative;
@@ -163,7 +165,7 @@
         position: absolute;
         background-color: #418fff;
         height: 100%;
-        transition: width 0.3s ease;
+        transition: width 0.5s ease;
       }
     }
   }
@@ -205,6 +207,10 @@
       #{$self}__text {
         color: $black;
       }
+    }
+
+    #{$self}__audio {
+      border-radius: 12px 12px 0px 12px;
     }
   }
 

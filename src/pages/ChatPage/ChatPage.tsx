@@ -1,11 +1,47 @@
 import { Message } from "../../components";
+import { Dialogs } from "@/components";
 
 import "./ChatPage.scss";
 
 const ChatPage = () => {
   return (
     <section className="chat-page">
+      {/* <Dialogs
+        items={[
+          {
+            _id: `${Math.random()}`,
+            user: {
+              fullname: "Petro",
+              avatar: null,
+            },
+            lastMessage: {
+              text: "aadawdawd awdw aw!",
+              isReaded: false,
+              created_at: 'Sun Apr 21 2023 21:30:22',
+            },
+          },
+        ]}
+      /> */}
+
       <Message
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
+        date="Sun Apr 21 2023 21:30:22"
+        userName="Yurii"
+        audio={
+          "https://assets.mixkit.co/active_storage/sfx/2574/2574-preview.mp3"
+        }
+        // isMe={true}
+      />
+      <Message
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
+        date="Sun Apr 21 2023 21:30:22"
+        userName="Yurii"
+        audio={
+          "https://assets.mixkit.co/active_storage/sfx/2574/2574-preview.mp3"
+        }
+        isMe={true}
+      />
+      {/* <Message
         avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
         text="Привет бандит, как дела?"
         date="Sun Apr 21 2023 21:30:22"
@@ -54,7 +90,7 @@ const ChatPage = () => {
         avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
         userName="Sergii"
         isTyping={true}
-      />
+      /> */}
     </section>
   );
 };
