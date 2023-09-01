@@ -9,38 +9,44 @@ const ChatPage = () => {
       {/* <Dialogs
         items={[
           {
-            _id: `${Math.random()}`,
+            _id: '11111165876WHghawd5678',
             user: {
-              fullname: "Petro",
+              _id: '11111165876WHghawd5678',
+              fullname: "Ivan",
               avatar: null,
             },
             lastMessage: {
               text: "aadawdawd awdw aw!",
               isReaded: false,
-              created_at: 'Sun Apr 21 2023 21:30:22',
+              created_at: "Sun Apr 21 2023 21:30:22",
             },
           },
         ]}
       /> */}
 
       <Message
-        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
         date="Sun Apr 21 2023 21:30:22"
         userName="Yurii"
         audio={
           "https://assets.mixkit.co/active_storage/sfx/2574/2574-preview.mp3"
         }
+        user={{
+          _id: "11111165876WHghawd5678",
+          fullname: "Ivan",
+          avatar: null,
+          // avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU",
+        }}
         // isMe={true}
       />
-      <Message
+      {/* <Message
         avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
         date="Sun Apr 21 2023 21:30:22"
-        userName="Yurii"
+        userName="Yurii" 
         audio={
           "https://assets.mixkit.co/active_storage/sfx/2574/2574-preview.mp3"
         }
         isMe={true}
-      />
+      /> */}
       {/* <Message
         avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJsoKegnLjWMaIgHM7Iz8INBrksShqUGLbQ&usqp=CAU"
         text="Привет бандит, как дела?"

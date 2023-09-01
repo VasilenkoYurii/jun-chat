@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import classNames from "classnames";
-import { Time, IconReaded } from "..";
+import { Time, IconReaded, Avatar } from "..";
 import convertCurrentTime from "@/utils/helpers/convertCurrentTime";
 import isAudio from "@/utils/helpers/isAudio";
 
@@ -89,7 +89,12 @@ const MessageAudio = ({ audioSrc }: any) => {
 };
 
 interface MessageProps {
-  avatar: string;
+  avatar?: string;
+  user?: {
+    _id: string;
+    fullname: string;
+    avatar?: string | undefined | null;
+  };
   text?: string;
   date?: string;
   userName: string;
@@ -102,6 +107,7 @@ interface MessageProps {
 
 const Message = ({
   avatar,
+  user,
   text,
   date,
   userName,
@@ -140,9 +146,7 @@ const Message = ({
     >
       <div className="message__content">
         <IconReaded isMe={isMe} isReaded={isReaded} />
-        <div className="message__avatar">
-          <img src={avatar} alt={`Avatar ${userName}`} className="avatar" />
-        </div>
+        <div className="message__avatar">{user && <Avatar user={user} />}</div>
 
         <div className="message__info">
           {(text || isTyping) && (

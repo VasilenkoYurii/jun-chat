@@ -11,9 +11,9 @@ const getCorrectIndex = (number: number) => {
   return number > 255 ? 255 : number < 0 ? 0 : number;
 };
 
-export default (hash: any) => {
+export default (hash: string) => {
   const [r, g, b] = hash
-    .substr(0, 3)
+    .substring(0, 3)
     .split("")
     .map((char: string) => getCorrectIndex(char.charCodeAt(0)));
 

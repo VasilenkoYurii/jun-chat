@@ -6,6 +6,7 @@ interface DialogsProps {
   items: {
     _id: string;
     user: {
+      _id: string;
       fullname: string;
       avatar?: string | undefined | null;
     };
@@ -21,7 +22,7 @@ const Dialogs = ({ items }: DialogsProps) => {
   return (
     <div className="dialogs">
       {items.map((item) => (
-        <DialogItem key={item._id} />
+        <DialogItem key={item._id} partner={item.user} />
       ))}
     </div>
   );
