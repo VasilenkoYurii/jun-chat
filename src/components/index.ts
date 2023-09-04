@@ -8,7 +8,7 @@ export { default as Time } from "./Time/Time";
 export { default as IconReaded } from "./IconReaded/IconReaded";
 export { default as Dialogs } from "./Dialogs/Dialogs";
 export { default as Avatar } from "./Avatar/Avatar";
-// export { default as Status } from "./Status";
+export { default as Status } from "./Status/Status";
 // export { default as ChatInput } from "./ChatInput";
 // export { default as FormField } from "./FormField/FormField";
 // export { default as UploadFiles } from "./UploadFiles";
